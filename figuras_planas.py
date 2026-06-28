@@ -2,7 +2,8 @@ import unicodedata
 qual_figura = input("Digite qual a figura que você deseja calcular a área: ")
 figura_limpa = unicodedata.normalize('NFKD', qual_figura).encode('ASCII', 'ignore').decode('ASCII').upper()
 base_altura = ["RETANGULO", "QUADRADO", "PARALELOGRAMO", "TRIANGULO","TRAPEZIO"]
-diferentes = ["LOSANGO", "CIRCULO", "PENTAGONO", "HEXAGONO",]
+diferentes = ["LOSANGO", "CIRCULO"]
+gono = ["PENTAGONO", "HEXAGONO"]
 if figura_limpa in base_altura:
     base = float(input("Digite o valor da base da figura(se for um trapézio, digite a base maior): "))
     altura = float(input("Digite o valor da altura da figura(se for um quadrado repita o valor da base): "))
@@ -25,4 +26,17 @@ elif figura_limpa in diferentes:
         pi = 3.14159
         formula = (raio**2)*pi
         print(formula)
+    else:
+        diagonal_maior = float(input("Digite o valor da diagonal maior: "))
+        diagonal_menor = float(input("Digite o valor da diagonal menor: "))
+        formula = (diagonal_maior*diagonal_menor)/2
+        print(formula)
+elif figura_limpa in gono:
+    if figura_limpa == "PENTAGONO":
+        apotema = float(input("Digite o valor da apótema(se não souber digite NAO): "))
+        perimetro = float(input("Digite o perimetro(se não souber digite NAO): "))
+    
+
+
+
 
