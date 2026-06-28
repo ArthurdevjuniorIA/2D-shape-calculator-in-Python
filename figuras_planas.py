@@ -19,9 +19,10 @@ if figura_limpa in base_altura:
             base_menor = float(input("Digite a base menor: "))
             formula = ((base+base_menor)*altura)/2
             print(formula)
-elif figura_limpa == "CIRCULO":
-    raio = float(input("Digite qual é o raio da figura"))
-    pi = 3.14159
-    formula = (raio**2)*pi
-    print(formula)
+elif figura_limpa in diferentes:
+    if figura_limpa == "CIRCULO":
+        raio = float(input("Digite qual é o raio da figura"))
+        pi = 3.14159
+        formula = (raio**2)*pi
+        print(formula)
 
