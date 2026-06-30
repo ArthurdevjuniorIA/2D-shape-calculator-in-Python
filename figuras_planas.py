@@ -35,7 +35,13 @@ elif figura_limpa in gono:
     if figura_limpa == "PENTAGONO":
         apotema = float(input("Digite o valor da apótema(se não souber digite NAO): "))
         perimetro = float(input("Digite o perimetro(se não souber digite NAO): "))
-    
+        formula = (apotema*perimetro)/2
+        print(formula)
+    else:
+        lado = float(input("Digite o valor do lado do hexágono: "))
+        raiz_3 = 3**(1/2)
+        formula = (3*(lado**2)*raiz_3)/2
+        print(formula)
 
 
 
