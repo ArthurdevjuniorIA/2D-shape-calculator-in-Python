@@ -12,36 +12,30 @@ if figura_limpa in base_altura:
     else:
         if figura_limpa == "RETANGULO" or figura_limpa == "PARALELOGRAMO" or figura_limpa== "QUADRADO":
             formula = (base*altura)
-            print(f"o Valor da área do {figura_limpa} é {formula}")
         elif figura_limpa == "TRIANGULO":
             formula = (base*altura)/2
-            print(f"o Valor da área do {figura_limpa} é {formula}")
         else:
             base_menor = float(input("Digite a base menor: "))
             formula = ((base+base_menor)*altura)/2
-            print(f"o Valor da área do {figura_limpa} é {formula}")
 elif figura_limpa in diferentes:
     if figura_limpa == "CIRCULO":
         raio = float(input("Digite qual é o raio da figura"))
         pi = 3.14159
         formula = (raio**2)*pi
-        print(f"o Valor da área do {figura_limpa} é {formula}")
     else:
         diagonal_maior = float(input("Digite o valor da diagonal maior: "))
         diagonal_menor = float(input("Digite o valor da diagonal menor: "))
         formula = (diagonal_maior*diagonal_menor)/2
-        print(f"o Valor da área do {figura_limpa} é {formula}")
 elif figura_limpa in gono:
     if figura_limpa == "PENTAGONO":
         apotema = float(input("Digite o valor da apótema(se não souber digite NAO): "))
         perimetro = float(input("Digite o perimetro(se não souber digite NAO): "))
         formula = (apotema*perimetro)/2
-        print(f"o Valor da área do {figura_limpa} é {formula}")
     else:
         lado = float(input("Digite o valor do lado do hexágono: "))
         raiz_3 = 3**(1/2)
         formula = (3*(lado**2)*raiz_3)/2
-        print(f"o Valor da área do {figura_limpa} é {formula}")
+print(f"o Valor da área do {qual_figura} é {formula}")
 
 
 
