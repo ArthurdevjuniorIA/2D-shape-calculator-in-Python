@@ -1,0 +1,51 @@
+import unicodedata
+qual_figura = input("Digite qual a figura que você deseja calcular a área: ")
+# Tranforma qualquer texto em um sem acentos e em caixa alta
+figura_limpa = unicodedata.normalize('NFKD', qual_figura).encode('ASCII', 'ignore').decode('ASCII').upper()
+base_altura = ["RETANGULO", "QUADRADO", "PARALELOGRAMO", "TRIANGULO","TRAPEZIO"]
+diferentes = ["LOSANGO", "CIRCULO"]
+gono = ["PENTAGONO", "HEXAGONO"]
+
+def conversor_de_unidades(unidade_de_medida):
+   if unidade_de_medida == "km":
+       base
+       
+   
+if figura_limpa in base_altura:
+    base = input("Digite o valor da base da figura(se for um trapézio, digite a base maior): ")
+    base_verdadeira, unidade_de_medida = base.split()
+    altura = input("Digite o valor da altura da figura(se for um quadrado repita o valor da base): ")
+    altura_verdadeira, unidade_de_medida = altura.split()
+    if float(base_verdadeira)<=0 or altura<=0:
+        print("Os valores de base ou altura não podem ser negativos")
+    else:
+        if figura_limpa == "RETANGULO" or figura_limpa == "PARALELOGRAMO" or figura_limpa== "QUADRADO":
+            formula = float(base_verdadeira)*float(altura_verdadeira)
+        elif figura_limpa == "TRIANGULO":
+            formula = (base*altura)/2
+        else:
+            base_menor = float(input("Digite a base menor: "))
+            formula = ((base+base_menor)*altura)/2
+elif figura_limpa in diferentes:
+    if figura_limpa == "CIRCULO":
+        raio = float(input("Digite qual é o raio da figura"))
+        pi = 3.14159
+        formula = (raio**2)*pi
+    else:
+        diagonal_maior = float(input("Digite o valor da diagonal maior: "))
+        diagonal_menor = float(input("Digite o valor da diagonal menor: "))
+        formula = (diagonal_maior*diagonal_menor)/2
+elif figura_limpa in gono:
+    if figura_limpa == "PENTAGONO":
+        apotema = float(input("Digite o valor da apótema(se não souber digite NAO): "))
+        perimetro = float(input("Digite o perimetro(se não souber digite NAO): "))
+        formula = (apotema*perimetro)/2
+    else:
+        lado = float(input("Digite o valor do lado do hexágono: "))
+        raiz_3 = 3**(1/2)
+        formula = (3*(lado**2)*raiz_3)/2
+print(f"o Valor da área do {qual_figura} é {formula}")
+
+
+
+
