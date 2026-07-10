@@ -5,14 +5,21 @@ figura_limpa = unicodedata.normalize('NFKD', qual_figura).encode('ASCII', 'ignor
 base_altura = ["RETANGULO", "QUADRADO", "PARALELOGRAMO", "TRIANGULO","TRAPEZIO"]
 diferentes = ["LOSANGO", "CIRCULO"]
 gono = ["PENTAGONO", "HEXAGONO"]
-
+# Essa função converte a unidade de medida para metros
 def conversor_de_unidades(unidade_de_medida):
     if unidade_de_medida == "km":
        apenas_valor = float(apenas_valor) * 1000
     elif unidade_de_medida == "hm":
         apenas_valor = float(apenas_valor) * 100
-    
-    
+    elif unidade_de_medida == "dam":
+        apenas_valor = float(apenas_valor) * 10
+    elif unidade_de_medida == "dm":
+        apenas_valor = float(apenas_valor)/10
+    elif unidade_de_medida == "cm":
+        apenas_valor = float(apenas_valor)/100
+    elif unidade_de_medida == "mm":
+        apenas_valor = float(apenas_valor)/1000
+    return unidade_de_medida
 if figura_limpa in base_altura:
     medida_1 = input("Digite o valor da base da figura(se for um trapézio, digite a base maior): ")
     apenas_valor, unidade_de_medida = medida_1.split()
@@ -26,8 +33,9 @@ if figura_limpa in base_altura:
         elif figura_limpa == "TRIANGULO":
             formula = float(apenas_valor)*float(apenas_valor_2)
         else:
-            base_menor = float(input("Digite a base menor: "))
-            formula = float(apenas_valor)*float(apenas_valor_2)
+            medida_3 = input("Digite a base menor: ")
+            apenas_valor_3, unidade_de_medida = medida_3.split()
+            formula = ((float(medida_1)+float(medida_3))*float(medida_2))/2
 elif figura_limpa in diferentes:
     if figura_limpa == "CIRCULO":
         medida_1 = input("Digite qual é o raio da figura: ")
