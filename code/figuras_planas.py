@@ -6,7 +6,7 @@ base_altura = ["RETANGULO", "QUADRADO", "PARALELOGRAMO", "TRIANGULO","TRAPEZIO"]
 diferentes = ["LOSANGO", "CIRCULO"]
 gono = ["PENTAGONO", "HEXAGONO"]
 # Essa função converte a unidade de medida para metros
-def conversor_de_unidades(unidade_de_medida):
+def conversor_de_unidades(valor):
     if unidade_de_medida == "km":
        apenas_valor = float(apenas_valor) * 1000
     elif unidade_de_medida == "hm":
@@ -60,7 +60,8 @@ elif figura_limpa in gono:
         lado = float(input("Digite o valor do lado do hexágono: "))
         raiz_3 = 3**(1/2)
         formula = (3*(lado**2)*raiz_3)/2
-print(f"o Valor da área do {qual_figura} é {formula}")
+formula = conversor_de_unidades(formula)
+print(f"o Valor da área do {qual_figura} é {formula} m²")
 
 
 
