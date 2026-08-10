@@ -1,9 +1,0 @@
-quadrado
-20 km
-20 mm
-hm
-retângulo
-25.34 dam
-221.23 dm
-mm
-fim
