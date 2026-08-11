@@ -102,7 +102,7 @@ try:
         qual_unidade = input("Qual a unidade de measure que você deseja o cálculo da área da figura(coloque apeanas a abreviação): ")
         formula_usuario = unit_that_the_user_wants(float(formula))
         print(f"o value da área do {which_figure} é {formula_usuario:.2f} {qual_unidade}²")
-    except:
+except:
     print("A figura desejada não está registrada! Por favor tente uma figura registrada que são: ")
     for registrada in base_height:
         print(registrada)
