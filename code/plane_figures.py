@@ -1,11 +1,10 @@
 import unicodedata
-which_figure = input("Enter the shape whose area you wish to calculate: ")
-
-# Transforms any text in all caps and without accents
-which_figure_uppercase = unicodedata.normalize('NFKD', which_figure).encode('ASCII', 'ignore').decode('ASCII').upper()
 base_height = ["RETANGULO", "QUADRADO", "PARALELOGRAMO", "TRIANGULO","TRAPEZIO"]
 diferents = ["LOSANGO", "CIRCULO"]
 polygons = ["PENTAGONO", "HEXAGONO"]
+
+
+
 
 # This function converts the unity of measurement for meters
 def unit_converter(value):
@@ -25,6 +24,8 @@ def unit_converter(value):
         pass
     return only_value
 
+
+
 # This function converts the results to the unity of measurement that the user wants
 def unit_that_the_user_wants(measure):
     if qual_unidade == "km":
@@ -42,8 +43,14 @@ def unit_that_the_user_wants(measure):
     else:
         pass
     return formula
-try:
-    while True:
+
+
+
+while True:
+        which_figure = input("Enter the shape whose area you wish to calculate: ")
+
+        # Transforms any text in all caps and without accents
+        which_figure_uppercase = unicodedata.normalize('NFKD', which_figure).encode('ASCII', 'ignore').decode('ASCII').upper()
         if which_figure_uppercase == "FIM":
             break
         elif which_figure_uppercase in base_height:
@@ -55,13 +62,18 @@ try:
             only_value_2, unity_of_measure = measure_2.split()
             only_value_2 = float(only_value_2)
             only_value_2 = unit_converter(only_value_2)
+
+
             if only_value<=0 or only_value_2<=0:
                 print("Os valores de base ou altura não podem ser negativos")
             else:
+
                 if which_figure_uppercase == "RETANGULO" or which_figure_uppercase == "PARALELOGRAMO" or which_figure_uppercase== "QUADRADO":
                     formula = float(only_value*only_value_2)
+
                 elif which_figure_uppercase == "TRIANGULO":
                     formula = (only_value)*(only_value_2)/2
+
                 else:
                     measure_3 = input("Digite a base menor: ")
                     only_value_3, unity_of_measure = measure_3.split()
@@ -69,12 +81,14 @@ try:
                     formula = ((float(only_value)+float(only_value_3))*float(only_value_2))/2
 
         elif which_figure_uppercase in diferents:
+
             if which_figure_uppercase == "CIRCULO":
                 measure_1 = input("Digite qual é o raio da figura: ")
                 only_value, unity_of_measure = measure_1.split()
                 pi = 3.14159
                 only_value = unit_converter(only_value)
                 formula = (only_value**2)*pi
+
             else:
                 measure_1 = input("Digite o value da diagonal maior: ")
                 only_value, unity_of_measure = measure_1.split()
@@ -84,7 +98,9 @@ try:
                 only_value_2 = unit_converter(only_value_2)
                 formula = (float(only_value)*float(only_value_2))/2
 
+
         elif which_figure_uppercase in polygons:
+
             if which_figure_uppercase == "PENTAGONO":
                 measure_1 = input("Digite o value da apótema(se não souber digite NAO): ")
                 only_value, unity_of_measure = measure_1.split()
@@ -93,6 +109,7 @@ try:
                 only_value_2, unity_of_measure = measure_2.split()
                 only_value_2 = unit_converter(only_value_2)
                 formula = (float(only_value)*float(only_value_2))/2
+
             else:
                 lado = input("Digite o value do lado do hexágono: ")
                 only_value, unity_of_measure = lado.split()       
@@ -101,12 +118,5 @@ try:
                 formula = (3*(only_value**2)*raiz_3)/2
         qual_unidade = input("Qual a unidade de measure que você deseja o cálculo da área da figura(coloque apeanas a abreviação): ")
         formula_usuario = unit_that_the_user_wants(float(formula))
-        print(f"o value da área do {which_figure} é {formula_usuario:.2f} {qual_unidade}²")
-except:
-    print("A figura desejada não está registrada! Por favor tente uma figura registrada que são: ")
-    for registrada in base_height:
-        print(registrada)
-    for tem_essas in polygons:
-        print(tem_essas)
-    for apenas_essas in diferents:
-        print(apenas_essas)
+        print(f"o value da área do {which_figure} é {formula_usuario:.6f} {qual_unidade}²")
+        continue
