@@ -62,9 +62,13 @@ python src/main.py
 ```
 ## 💡 Exemplo de Uso
 Digite a figura geométrica cuja área deseja calcular (ou FIM para sair): trapézio
+
 Digite o valor da base da figura (se for um trapézio, digite a base maior): 10 cm
+
 Digite o valor da altura da figura: 5 cm
+
 Digite a base menor: 6 cm
+
 Em qual unidade de medida deseja a área final? (ex: m, cm, km): cm
 
 O valor da área do trapézio é 40.000000 cm²
